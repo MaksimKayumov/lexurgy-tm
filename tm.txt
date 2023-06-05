@@ -1,0 +1,23 @@
+# Implementation of 2-state 3-symbol Turing machine
+# z - 0
+# o - 1
+# t - 2
+Class symbol {z, o, t, a, b, l, r, q}
+extend:
+ l => lz
+ r => zr
+exec:
+ az => oqbq
+ zao => qaqzt
+ oao => qaqot
+ tao => qaqtt
+ zat => qaqzo
+ oat => qaqoo
+ tat => qaqto
+ zbz => qaqzt
+ obz => qaqot
+ tbz => qaqtt
+ bo => tqbq
+ bt => zqbq
+next:
+ q => *
